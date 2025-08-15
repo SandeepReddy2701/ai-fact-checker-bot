@@ -1,4 +1,7 @@
 # AI Fact-Checker Bot
+<img width="1043" height="220" alt="Ai fact check bot png2 png3" src="https://github.com/user-attachments/assets/0af4fb1b-c8a4-4dda-8cc3-feea130501bf" />
+
+
 
 A reference implementation that follows the project brief. It uses LangChain for prompt chaining, DuckDuckGo for search, and provides Streamlit, Gradio, and CLI interfaces.
 
