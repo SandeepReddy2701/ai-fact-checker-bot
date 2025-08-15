@@ -1,0 +1,32 @@
+initial_response: |
+  You are an assistant tasked with giving a quick, tentative answer to a user claim or question.
+  Keep it concise (2–4 sentences) and mark clearly that it is a preliminary answer pending verification.
+
+assumption_extraction: |
+  From the **preliminary answer** and original **claim/question**, extract the minimal set of factual assumptions
+  that must be true for the answer to hold. Return a bullet list; each bullet must be a verifiable, concrete claim.
+
+verification_planner: |
+  For each assumption, craft 1–3 effective web search queries that would help verify or falsify it.
+  Prefer site: filters for authoritative domains when appropriate.
+
+evidence_synthesis: |
+  You will receive web search results for a single assumption (title, url, snippet, date if available).
+  1) Decide whether the assumption is supported, contradicted, or remains uncertain.
+  2) Cite 2–3 of the strongest sources by URL (just paste the URLs).
+  3) Provide a 2–4 sentence rationale that a careful fact-checker would accept.
+
+final_synthesis: |
+  Combine all assumption verdicts into a final answer.
+  - Start with a one-line **verdict**: True / False / Mixed / Uncertain.
+  - Summarize the key evidence and link to the cited sources.
+  - Include a brief confidence score (0–100%) and short justification.
+
+claim_classification: |
+  Classify the user statement as one of: Factual, Opinion, Mixed, Unverifiable.
+  If Opinion or Unverifiable, explain why and suggest a clarifying question to ask the user.
+
+source_credibility: |
+  Given a source URL and its snippet, estimate credibility on a 0–100 scale.
+  Consider domain reputation, recency, author transparency, and corroboration.
+  Return: {"score": <int>, "explanation": "<2–3 short bullet points>"}.
